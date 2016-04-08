@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hi,Jiao</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div style="margin: 0 auto;width: 0px;height: 0px;overflow: hidden;">
+    <img src="images/hi.jpg" width="100%" height="100%">
+</div>
+<!--<embed src="music/shiwo.mp3"  width="0" height="0" type=audio/mpeg loop="true" autostart="true">-->
+<audio id="Jaudio" class="media-audio" src="music/summer.mp3" autoplay preload loop="loop"></audio >
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+            start_time = 2015-05-09 00:00:00<br />
+            <span class="comments">/*the time we start to be together*/</span><br />
+            <span class="comments">/* end_time = x /*the time my love goes to end*/</span><br />
+            <span class="comments">/*【x = (函数，从lifetime 和 century中选择更长的）】*/</span><br />
+            <span class="comments">/*是一生或一世纪，更长的那个*/</span><br />
+            <br />
+            <br />
+            function love; < class="comments">/*声明一个函数：love*/<br />
+            feeling a;feeling b;feeling c; <span class="comments">/*声明三个常数：a,b,c*/</span><br />
+            <br />
+            love = a + b + c<br />
+            <br />
+            a = (select my_feelings<br />
+            from my_memory<br />
+            where you are absent<br />
+            return miss);<br />
+            <span class="comments">/*从记忆中选取你不在时，我的情感，得到返回值：想念*/</span><br />
+            <br/>
+            b = (select my_emotion<br />
+            from my_dailylife<br />
+            where you are by my side<br />
+            return happiness);<br />
+            <span class="comments">/*从生活中选取你在我身边时，我的感受，得到返回值：幸福*/</span><br />
+            <br />
+            c = (select my_confession<br />
+            from my_wish<br />
+            where we are together<br />
+            and permanently<br />
+            return company)<br />
+            <span class="comments">/*从愿望中选取我们在一起时，我的长情的告白，得到返回值：陪伴*/</span><br />
+            <br />
+            if (<br />
+            boy_name = Tong,<br />
+            and girl_name = Jiao<br />
+            )<br />
+            print (<br />
+            "Baby, I love you!<br />
+            For you,a thousand times over!"<br />
+            )<br />
+            <br />
+            <br />
+        </div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+                    <font color="##f0ffff">亲爱的宝宝,这是我们相爱相伴的时光--</font>
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+                    <font color="#FFCCCC"> Love You,My Dear.</font><br/>
+					<div class="signature">- Tong</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+function audioAutoPlay(id){
+    var audio = document.getElementById(id),
+            play = function(){
+                audio.play();
+                document.removeEventListener("touchstart",play, false);
+            };
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {//微信
+        play();
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', function() {//易信
+        play();
+    }, false);
+    document.addEventListener("touchstart",play, false);
+}
+audioAutoPlay('Jaudio');
+
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+//0对应1月
+together.setFullYear(2015, 4, 9);
+together.setHours(0);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	//adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</html>

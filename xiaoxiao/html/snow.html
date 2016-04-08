@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HTML5 Canvas实现动态下雪效果</title>
+
+    <link href="../css/snow.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../js/snow.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("canvas.flare").let_it_snow({
+                windPower: 0,
+                speed: 0,
+                color: "#392F52",
+                size: 120,
+                opacity: 0.00000001,
+                count: 40,
+                interaction: false
+            });
+
+            $("canvas.snow").let_it_snow({
+                windPower: 3,
+                speed: 1,
+                count: 250,
+                size: 0
+            });
+
+            $("canvas.flake").let_it_snow({
+                windPower: -3,
+                speed: 1,
+                count: 20,
+                size: 10,
+                image: "images/white-snowflake.png"
+            });
+
+        });
+    </script>
+
+
+</head>
+
+<body>
+<img src="images/white-snowflake.png" style="display: none" id="lis_flake">
+<img src="images/white-snowflake.png" style="display: none" id="lis_flake">
+<canvas width="2560" height="1338" class="flare"></canvas>
+<canvas width="2560" height="1338" class="snow"></canvas>
+<canvas width="2560" height="388" class="flake"></canvas>
+
+</body>
+</html>
