@@ -25,45 +25,41 @@
 <div id="mainDiv">
 	<div id="content">
 		<div id="code">
-            start_time = 2015-05-09 00:00:00<br />
-            <span class="comments">/*the time we start to be together*/</span><br />
-            <span class="comments">/* end_time = x /*the time my love goes to end*/</span><br />
-            <span class="comments">/*【x = (函数，从lifetime 和 century中选择更长的）】*/</span><br />
-            <span class="comments">/*是一生或一世纪，更长的那个*/</span><br />
-            <br />
-            <br />
-            function love; < class="comments">/*声明一个函数：love*/<br />
-            feeling a;feeling b;feeling c; <span class="comments">/*声明三个常数：a,b,c*/</span><br />
-            <br />
-            love = a + b + c<br />
-            <br />
-            a = (select my_feelings<br />
-            from my_memory<br />
-            where you are absent<br />
-            return miss);<br />
-            <span class="comments">/*从记忆中选取你不在时，我的情感，得到返回值：想念*/</span><br />
+            <span class="comments">/*x是一生或一世纪，也许更长.......*/</span><br />
+            var start_time = 2015-05-09 00:00:00, <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;end_time = NAN,<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;x = end_time - start_time;<br />
             <br/>
-            b = (select my_emotion<br />
-            from my_dailylife<br />
-            where you are by my side<br />
-            return happiness);<br />
+            init();<br />
+            <br/>
+            function init(){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;var love = love(my_feelings(),my_emotion(), my_confession);<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;if(love){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (boy_name == 'Tong' && girl_name == 'Jiao'){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Baby, I love you!For you,a thousand times over!")<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+            };<br />
+            <br />
+            <span class="comments">/*爱就是a、b、c的和*/</span><br />
+            function love(a,b,c){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return a+b+c;<br />
+            };<br />
+            <br />
+            <span class="comments">/*从记忆中选取你不在时，我的情感，得到返回值：想念*/</span><br />
+            function my_feelings(){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return $.query("select miss from my_memory where you are absent");<br />
+            };<br />
+            <br />
             <span class="comments">/*从生活中选取你在我身边时，我的感受，得到返回值：幸福*/</span><br />
+            function my_emotion(){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return $.query("select happiness from my_dailylife where you are by my side");<br />
+            };<br />
             <br />
-            c = (select my_confession<br />
-            from my_wish<br />
-            where we are together<br />
-            and permanently<br />
-            return company)<br />
             <span class="comments">/*从愿望中选取我们在一起时，我的长情的告白，得到返回值：陪伴*/</span><br />
-            <br />
-            if (<br />
-            boy_name = Tong,<br />
-            and girl_name = Jiao<br />
-            )<br />
-            print (<br />
-            "Baby, I love you!<br />
-            For you,a thousand times over!"<br />
-            )<br />
+            function my_confession(){<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;return $.query("select company from my_wish where we are together and permanently");<br />
+            };<br />
             <br />
             <br />
         </div>
