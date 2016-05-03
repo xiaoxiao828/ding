@@ -27,40 +27,40 @@
 		<div id="code">
             <span class="comments">/*x是一生或一世纪，也许更长.......*/</span><br />
             var start_time = 2015-05-09 00:00:00, <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;end_time = NAN,<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;x = end_time - start_time;<br />
+            <li style="text-indent: 2em;list-style-type:none;">end_time = NAN,</li>
+            <li style="text-indent: 2em;list-style-type:none;">x = end_time - start_time;</li><br />
             <br/>
             <span class="comments">/*爱的初始化*/</span><br />
             init();<br />
             <br/>
             <span class="comments">/*爱的取值*/</span><br />
             function init(){<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;var love = love(my_feelings(),my_emotion(), my_confession);<br/>
-            &nbsp;&nbsp;&nbsp;&nbsp;if(love){<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (boy_name == 'Tong' && girl_name == 'Jiao'){<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Baby, I love you!For you,a thousand times over!")<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+            <li style="text-indent: 2em;list-style-type:none;">var love = love(my_feelings(),my_emotion(), my_confession);</li>
+            <li style="text-indent: 2em;list-style-type:none;">if(love){</li>
+            <li style="text-indent: 4em;list-style-type:none;">if (boy_name == 'Tong' && girl_name == 'Jiao'){</li>
+            <li style="text-indent: 6em;list-style-type:none;">console.log("Baby, I love you!For you,a thousand times over!")</li>
+            <li style="text-indent: 6em;list-style-type:none;">}</li>
+            <li style="text-indent: 2em;list-style-type:none;">}</li>
             };<br />
             <br />
             <span class="comments">/*爱就是a、b、c的和*/</span><br />
             function love(a,b,c){<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;return a+b+c;<br />
+            <li style="text-indent: 2em;list-style-type:none;">return a+b+c;</li>
             };<br />
             <br />
             <span class="comments">/*从记忆中选取你不在时，我的情感，得到返回值：想念*/</span><br />
             function my_feelings(){<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;return $.query("select miss from my_memory where you are absent");<br />
+            <li style="text-indent: 2em;list-style-type:none;">return $.query("select miss from my_memory where you are absent");</li>
             };<br />
             <br />
             <span class="comments">/*从生活中选取你在我身边时，我的感受，得到返回值：幸福*/</span><br />
             function my_emotion(){<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;return $.query("select happiness from my_dailylife where you are by my side");<br />
+            <li style="text-indent: 2em;list-style-type:none;">return $.query("select happiness from my_dailylife where you are by my side");</li>
             };<br />
             <br />
             <span class="comments">/*从愿望中选取我们在一起时，我的长情的告白，得到返回值：陪伴*/</span><br />
             function my_confession(){<br />
-            &nbsp;&nbsp;&nbsp;&nbsp;return $.query("select company from my_wish where we are together and permanently");<br />
+            <li style="text-indent: 2em;list-style-type:none;">return $.query("select company from my_wish where we are together and permanently");</li>
             };<br />
             <br />
             <br />
